@@ -1,43 +1,280 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BaoZen | Automatización e IA</title>
-    <style>
-        body { margin: 0; font-family: 'Segoe UI', sans-serif; background-color: #00120B; color: white; text-align: center; }
-        header { padding: 80px 20px; }
-        h1 { color: #C200FB; font-size: 3em; margin-bottom: 10px; }
-        .hero { padding: 40px; }
-        .cta-button { 
-            display: inline-block; padding: 15px 30px; background-color: #C200FB; 
-            color: white; text-decoration: none; border-radius: 50px; font-weight: bold; margin-top: 20px; 
-        }
-        .section { padding: 60px 20px; }
-        footer { padding: 20px; font-size: 0.8em; color: #666; }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>BaoZen AI | Automatización Inteligente para Empresas</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Inter', sans-serif;
+}
+
+body{
+background:#00120B;
+color:white;
+line-height:1.6;
+}
+
+/* NAV */
+
+nav{
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:20px 10%;
+position:sticky;
+top:0;
+background:#00120B;
+}
+
+.logo{
+font-size:1.5rem;
+font-weight:700;
+color:#C200FB;
+}
+
+nav a{
+color:white;
+text-decoration:none;
+margin-left:25px;
+font-size:0.9rem;
+opacity:0.8;
+}
+
+nav a:hover{
+opacity:1;
+}
+
+/* HERO */
+
+.hero{
+height:90vh;
+display:flex;
+align-items:center;
+justify-content:center;
+text-align:center;
+flex-direction:column;
+padding:20px;
+}
+
+.hero h1{
+font-size:3.2rem;
+color:#C200FB;
+margin-bottom:20px;
+}
+
+.hero p{
+max-width:600px;
+font-size:1.1rem;
+opacity:0.8;
+}
+
+.cta{
+margin-top:35px;
+padding:16px 36px;
+background:#C200FB;
+border-radius:50px;
+text-decoration:none;
+color:white;
+font-weight:600;
+transition:0.3s;
+}
+
+.cta:hover{
+transform:scale(1.05);
+box-shadow:0 0 20px #c200fb8c;
+}
+
+/* SECTION */
+
+.section{
+padding:100px 10%;
+text-align:center;
+}
+
+.section h2{
+margin-bottom:40px;
+font-size:2rem;
+}
+
+/* SERVICES */
+
+.services{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:30px;
+margin-top:40px;
+}
+
+.card{
+background:#031d15;
+padding:30px;
+border-radius:12px;
+transition:0.3s;
+}
+
+.card:hover{
+transform:translateY(-5px);
+background:#05291f;
+}
+
+.card h3{
+color:#C200FB;
+margin-bottom:10px;
+}
+
+/* BENEFITS */
+
+.benefits{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+gap:25px;
+margin-top:40px;
+}
+
+.benefit{
+background:#031d15;
+padding:25px;
+border-radius:10px;
+}
+
+/* CTA FINAL */
+
+.cta-section{
+padding:100px 10%;
+text-align:center;
+background:#031d15;
+}
+
+.cta-section h2{
+margin-bottom:20px;
+}
+
+/* FOOTER */
+
+footer{
+padding:30px;
+text-align:center;
+font-size:0.8rem;
+opacity:0.6;
+}
+
+</style>
+
 </head>
+
 <body>
 
-    <header>
-        <h1>BaoZen</h1>
-        <p>Potenciando negocios con Inteligencia Artificial.</p>
-    </header>
+<nav>
 
-    <div class="hero">
-        <h2>Automatización inteligente para tu empresa</h2>
-        <p>Reducimos costos y optimizamos procesos mediante soluciones a medida.</p>
-        <a href="mailto:hola@baozen.com" class="cta-button">Empezar Proyecto</a>
-    </div>
+<div class="logo">BaoZen</div>
 
-    <div class="section">
-        <h3>Nuestros Servicios</h3>
-        <p>Chatbots inteligentes • Análisis Predictivo • Automatización de flujos</p>
-    </div>
+<div>
+<a href="#servicios">Servicios</a>
+<a href="#beneficios">Beneficios</a>
+<a href="#contacto">Contacto</a>
+</div>
 
-    <footer>
-        &copy; 2026 BaoZen AI Agency.
-    </footer>
+</nav>
+
+<section class="hero">
+
+<h1>Automatiza tu negocio con Inteligencia Artificial</h1>
+
+<p>
+Reducimos costos operativos y aumentamos la productividad mediante
+automatización inteligente, chatbots avanzados y sistemas basados en IA.
+</p>
+
+<a class="cta" href="mailto:hola@baozen.com">Agendar Consulta</a>
+
+</section>
+
+<section class="section" id="servicios">
+
+<h2>Servicios</h2>
+
+<div class="services">
+
+<div class="card">
+<h3>Chatbots con IA</h3>
+<p>Atiende clientes 24/7 con asistentes inteligentes entrenados para tu negocio.</p>
+</div>
+
+<div class="card">
+<h3>Automatización</h3>
+<p>Automatizamos tareas repetitivas para ahorrar tiempo y dinero.</p>
+</div>
+
+<div class="card">
+<h3>Integraciones</h3>
+<p>Conectamos CRM, WhatsApp, bases de datos y herramientas de negocio.</p>
+</div>
+
+<div class="card">
+<h3>Análisis de datos</h3>
+<p>Convierte tus datos en decisiones inteligentes con modelos predictivos.</p>
+</div>
+
+</div>
+
+</section>
+
+<section class="section" id="beneficios">
+
+<h2>¿Por qué trabajar con BaoZen?</h2>
+
+<div class="benefits">
+
+<div class="benefit">
+<h4>⚡ Implementación rápida</h4>
+<p>Soluciones listas en semanas, no meses.</p>
+</div>
+
+<div class="benefit">
+<h4>💰 Reducción de costos</h4>
+<p>Automatiza procesos que antes requerían personal.</p>
+</div>
+
+<div class="benefit">
+<h4>📈 Escalabilidad</h4>
+<p>Infraestructura preparada para crecer contigo.</p>
+</div>
+
+<div class="benefit">
+<h4>🤖 IA personalizada</h4>
+<p>Entrenamos modelos adaptados a tu negocio.</p>
+</div>
+
+</div>
+
+</section>
+
+<section class="cta-section" id="contacto">
+
+<h2>Empieza a automatizar tu negocio hoy</h2>
+
+<p>Agenda una llamada y descubre cómo la IA puede transformar tu empresa.</p>
+
+<br>
+
+<a class="cta" href="mailto:hola@baozen.com">Hablar con nosotros</a>
+
+</section>
+
+<footer>
+
+© 2026 BaoZen AI Agency
+
+</footer>
 
 </body>
 </html>
