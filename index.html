@@ -1,345 +1,72 @@
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BaoZen AI | Automatización Inteligente</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #C200FB;
+            --bg: #00120B;
+            --card-bg: rgba(3, 29, 21, 0.6);
+        }
+        * { margin:0; padding:0; box-sizing:border-box; font-family:'Inter', sans-serif; }
+        body { background: var(--bg); color:white; line-height:1.6; }
+        
+        /* Navegación */
+        nav { display:flex; justify-content:space-between; align-items:center; padding:20px 10%; position:fixed; width:100%; top:0; background:rgba(0,18,11,0.8); backdrop-filter:blur(15px); z-index:1000; border-bottom: 1px solid rgba(194,0,251,0.2); }
+        .logo { font-size:1.5rem; font-weight:700; color:var(--primary); letter-spacing: -1px; }
+        nav a { text-decoration:none; color:white; margin-left:25px; opacity:0.8; font-size:0.9rem; transition:0.3s; }
+        nav a:hover { opacity:1; color:var(--primary); }
 
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+        /* Hero mejorado */
+        .hero { height:100vh; display:flex; flex-direction:column; justify-content:center; align-items:center; text-align:center; padding:0 20px; background:radial-gradient(circle at center, #05291f 0%, #00120B 70%); }
+        .hero h1 { font-size: 3.5rem; color:white; margin-bottom:20px; line-height: 1.1; }
+        .hero span { color: var(--primary); }
+        .cta { display:inline-block; margin-top:30px; padding:15px 35px; background:var(--primary); border-radius:8px; text-decoration:none; color:white; font-weight:600; transition:0.3s; }
+        .cta:hover { transform:translateY(-3px); box-shadow:0 10px 20px rgba(194,0,251,0.3); }
 
-<title>BaoZen AI | Automatización Inteligente</title>
+        /* Secciones */
+        .section { padding:100px 10%; }
+        .services { display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:20px; }
+        .card { background: var(--card-bg); padding:40px; border-radius:16px; border: 1px solid rgba(255,255,255,0.05); }
+        .card h3 { color:var(--primary); margin-bottom:15px; }
 
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
-
-<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-
-<style>
-
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-font-family:'Inter', sans-serif;
-}
-
-body{
-background:#00120B;
-color:white;
-line-height:1.6;
-}
-
-/* NAV */
-
-nav{
-display:flex;
-justify-content:space-between;
-align-items:center;
-padding:25px 10%;
-position:fixed;
-width:100%;
-top:0;
-background:rgba(0,18,11,0.7);
-backdrop-filter:blur(10px);
-z-index:1000;
-}
-
-.logo{
-font-size:1.7rem;
-font-weight:700;
-color:#C200FB;
-}
-
-nav a{
-text-decoration:none;
-color:white;
-margin-left:30px;
-opacity:0.8;
-font-size:0.9rem;
-}
-
-nav a:hover{
-opacity:1;
-}
-
-/* HERO */
-
-.hero{
-height:100vh;
-display:flex;
-flex-direction:column;
-justify-content:center;
-align-items:center;
-text-align:center;
-padding:20px;
-background:linear-gradient(270deg,#00120B,#021f17,#00120B);
-background-size:400% 400%;
-animation:gradient 12s ease infinite;
-}
-
-@keyframes gradient{
-0%{background-position:0% 50%}
-50%{background-position:100% 50%}
-100%{background-position:0% 50%}
-}
-
-.hero h1{
-font-size:3.8rem;
-color:#C200FB;
-margin-bottom:20px;
-}
-
-.hero p{
-max-width:700px;
-opacity:0.85;
-font-size:1.15rem;
-}
-
-.cta{
-display:inline-block;
-margin-top:35px;
-padding:18px 40px;
-background:#C200FB;
-border-radius:50px;
-text-decoration:none;
-color:white;
-font-weight:600;
-transition:0.3s;
-}
-
-.cta:hover{
-transform:scale(1.05);
-box-shadow:0 0 25px #c200fb88;
-}
-
-/* SECTIONS */
-
-.section{
-padding:120px 10%;
-text-align:center;
-}
-
-.section h2{
-font-size:2.3rem;
-margin-bottom:50px;
-}
-
-/* SERVICES */
-
-.services{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-gap:30px;
-}
-
-.card{
-background:#031d15;
-padding:35px;
-border-radius:12px;
-transition:0.3s;
-}
-
-.card:hover{
-transform:translateY(-8px);
-background:#05291f;
-}
-
-.card h3{
-color:#C200FB;
-margin-bottom:15px;
-}
-
-/* PROCESS */
-
-.process{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-gap:30px;
-}
-
-.step{
-background:#031d15;
-padding:30px;
-border-radius:10px;
-}
-
-/* CTA SECTION */
-
-.cta-section{
-background:#031d15;
-padding:100px 10%;
-text-align:center;
-}
-
-.cta-section h2{
-margin-bottom:20px;
-}
-
-/* WHATSAPP BUTTON */
-
-.whatsapp{
-position:fixed;
-bottom:25px;
-right:25px;
-background:#25D366;
-color:white;
-font-size:28px;
-width:65px;
-height:65px;
-display:flex;
-align-items:center;
-justify-content:center;
-border-radius:50%;
-text-decoration:none;
-box-shadow:0 0 15px rgba(0,0,0,0.4);
-}
-
-/* FOOTER */
-
-footer{
-padding:40px;
-text-align:center;
-opacity:0.6;
-}
-
-</style>
-
+        .whatsapp-float { position:fixed; bottom:30px; right:30px; background:#25D366; color:white; width:60px; height:60px; border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:30px; box-shadow:0 4px 15px rgba(37,211,102,0.4); z-index:1000; transition:0.3s; }
+        .whatsapp-float:hover { transform:scale(1.1); }
+    </style>
 </head>
-
 <body>
 
 <nav>
-
-<div class="logo">BaoZen</div>
-
-<div>
-<a href="#servicios">Servicios</a>
-<a href="#proceso">Proceso</a>
-<a href="#contacto">Contacto</a>
-</div>
-
+    <div class="logo">BaoZen AI</div>
+    <div>
+        <a href="#servicios">Servicios</a>
+        <a href="#proceso">Proceso</a>
+    </div>
 </nav>
 
 <section class="hero">
-
-<h1 data-aos="fade-up">
-Automatiza tu empresa con Inteligencia Artificial
-</h1>
-
-<p data-aos="fade-up" data-aos-delay="200">
-
-Ayudamos a empresas a reducir costos operativos, optimizar procesos y aumentar su productividad mediante automatización inteligente.
-
-</p>
-
-<a class="cta whatsapp-link" href="#">
-Hablar por WhatsApp
-</a>
-
+    <h1 data-aos="fade-up">Automatiza tu empresa con<br> <span>Inteligencia Artificial</span></h1>
+    <p data-aos="fade-up" data-aos-delay="200">Reducción de costos y máxima productividad para tu negocio.</p>
+    <a class="cta whatsapp-link" href="#">Hablar por WhatsApp</a>
 </section>
 
-<section class="section" id="servicios">
-
-<h2 data-aos="fade-up">Servicios</h2>
-
-<div class="services">
-
-<div class="card" data-aos="fade-up">
-<h3>Chatbots IA</h3>
-<p>Automatiza la atención al cliente 24/7 con asistentes inteligentes.</p>
-</div>
-
-<div class="card" data-aos="fade-up" data-aos-delay="150">
-<h3>Automatización de Procesos</h3>
-<p>Reduce tareas manuales y optimiza flujos operativos.</p>
-</div>
-
-<div class="card" data-aos="fade-up" data-aos-delay="300">
-<h3>Integraciones</h3>
-<p>Conecta CRM, WhatsApp, APIs y herramientas empresariales.</p>
-</div>
-
-<div class="card" data-aos="fade-up" data-aos-delay="450">
-<h3>Análisis con IA</h3>
-<p>Convierte datos en decisiones estratégicas para tu empresa.</p>
-</div>
-
-</div>
-
-</section>
-
-<section class="section" id="proceso">
-
-<h2 data-aos="fade-up">Nuestro proceso</h2>
-
-<div class="process">
-
-<div class="step" data-aos="fade-up">
-<h3>1. Diagnóstico</h3>
-<p>Analizamos tu negocio y detectamos oportunidades de automatización.</p>
-</div>
-
-<div class="step" data-aos="fade-up" data-aos-delay="150">
-<h3>2. Implementación</h3>
-<p>Desarrollamos e integramos la solución adecuada para tu empresa.</p>
-</div>
-
-<div class="step" data-aos="fade-up" data-aos-delay="300">
-<h3>3. Optimización</h3>
-<p>Mejoramos continuamente el sistema para maximizar resultados.</p>
-</div>
-
-</div>
-
-</section>
-
-<section class="cta-section" id="contacto">
-
-<h2 data-aos="fade-up">
-¿Quieres implementar IA en tu negocio?
-</h2>
-
-<p data-aos="fade-up" data-aos-delay="200">
-Escríbenos por WhatsApp y evaluaremos tu caso sin compromiso.
-</p>
-
-<br>
-
-<a class="cta whatsapp-link" href="#">
-Hablar con un especialista
-</a>
-
-</section>
-
-<footer>
-
-© 2026 BaoZen AI Agency
-
-</footer>
-
-<a class="whatsapp whatsapp-link" href="#">
-💬
-</a>
+<a class="whatsapp-float whatsapp-link" href="#">💬</a>
 
 <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-
 <script>
+    AOS.init({ duration: 800, once: true });
 
-AOS.init({
-duration:1000
-});
+    // Configuración centralizada de WhatsApp
+    const phone = "573152870822";
+    const msg = encodeURIComponent("Hola, me interesa automatizar mi empresa con IA.");
+    const waUrl = `https://wa.me/${phone}?text=${msg}`;
 
-const phone = "573152870822";
-
-const message = encodeURIComponent(
-"Hola, encontré la página de BaoZen y me gustaría recibir más información sobre cómo implementar automatización e inteligencia artificial en mi negocio para reducir costos."
-);
-
-const url = `https://wa.me/${phone}?text=${message}`;
-
-document.querySelectorAll(".whatsapp-link").forEach(link=>{
-link.href = url;
-});
-
+    // Asignar a todos los elementos con clase whatsapp-link
+    document.querySelectorAll(".whatsapp-link").forEach(el => el.href = waUrl);
 </script>
-
 </body>
 </html>
