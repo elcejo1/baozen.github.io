@@ -1,12 +1,15 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>BaoZen AI | Automatización Inteligente para Empresas</title>
+<title>BaoZen AI | Automatización Inteligente</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
 <style>
 
@@ -23,63 +26,43 @@ color:white;
 line-height:1.6;
 }
 
-/* NAV */
-
-nav{
-display:flex;
-justify-content:space-between;
-align-items:center;
-padding:20px 10%;
-position:sticky;
-top:0;
-background:#00120B;
-}
-
-.logo{
-font-size:1.5rem;
-font-weight:700;
-color:#C200FB;
-}
-
-nav a{
-color:white;
-text-decoration:none;
-margin-left:25px;
-font-size:0.9rem;
-opacity:0.8;
-}
-
-nav a:hover{
-opacity:1;
-}
-
-/* HERO */
+/* HERO GRADIENT */
 
 .hero{
-height:90vh;
+height:100vh;
 display:flex;
-align-items:center;
-justify-content:center;
-text-align:center;
 flex-direction:column;
+justify-content:center;
+align-items:center;
+text-align:center;
 padding:20px;
+background:linear-gradient(270deg,#00120B,#021f17,#00120B);
+background-size:400% 400%;
+animation:gradient 12s ease infinite;
+}
+
+@keyframes gradient{
+0%{background-position:0% 50%}
+50%{background-position:100% 50%}
+100%{background-position:0% 50%}
 }
 
 .hero h1{
-font-size:3.2rem;
+font-size:3.8rem;
 color:#C200FB;
 margin-bottom:20px;
 }
 
 .hero p{
-max-width:600px;
-font-size:1.1rem;
-opacity:0.8;
+max-width:650px;
+opacity:0.85;
+font-size:1.15rem;
 }
 
 .cta{
+display:inline-block;
 margin-top:35px;
-padding:16px 36px;
+padding:18px 40px;
 background:#C200FB;
 border-radius:50px;
 text-decoration:none;
@@ -90,80 +73,149 @@ transition:0.3s;
 
 .cta:hover{
 transform:scale(1.05);
-box-shadow:0 0 20px #c200fb8c;
+box-shadow:0 0 25px #c200fb88;
 }
 
-/* SECTION */
+/* NAV */
+
+nav{
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:25px 10%;
+position:fixed;
+width:100%;
+top:0;
+background:rgba(0,18,11,0.7);
+backdrop-filter:blur(10px);
+}
+
+.logo{
+font-size:1.7rem;
+font-weight:700;
+color:#C200FB;
+}
+
+nav a{
+text-decoration:none;
+color:white;
+margin-left:30px;
+opacity:0.8;
+font-size:0.9rem;
+}
+
+nav a:hover{
+opacity:1;
+}
+
+/* SECTIONS */
 
 .section{
-padding:100px 10%;
+padding:120px 10%;
 text-align:center;
 }
 
 .section h2{
-margin-bottom:40px;
-font-size:2rem;
+font-size:2.3rem;
+margin-bottom:50px;
 }
 
 /* SERVICES */
 
 .services{
 display:grid;
-grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
 gap:30px;
-margin-top:40px;
 }
 
 .card{
 background:#031d15;
-padding:30px;
+padding:35px;
 border-radius:12px;
 transition:0.3s;
 }
 
 .card:hover{
-transform:translateY(-5px);
+transform:translateY(-8px);
 background:#05291f;
 }
 
 .card h3{
 color:#C200FB;
-margin-bottom:10px;
+margin-bottom:15px;
 }
 
-/* BENEFITS */
+/* PROCESS */
 
-.benefits{
+.process{
 display:grid;
 grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-gap:25px;
-margin-top:40px;
+gap:30px;
 }
 
-.benefit{
+.step{
 background:#031d15;
-padding:25px;
+padding:30px;
 border-radius:10px;
 }
 
-/* CTA FINAL */
+/* CONTACT */
 
-.cta-section{
-padding:100px 10%;
-text-align:center;
-background:#031d15;
+.contact{
+max-width:600px;
+margin:auto;
 }
 
-.cta-section h2{
-margin-bottom:20px;
+input, textarea{
+
+width:100%;
+padding:15px;
+margin-top:15px;
+border:none;
+border-radius:8px;
+background:#05291f;
+color:white;
+
+}
+
+button{
+
+margin-top:20px;
+padding:15px 30px;
+border:none;
+background:#C200FB;
+color:white;
+border-radius:40px;
+cursor:pointer;
+font-weight:600;
+
+}
+
+/* WHATSAPP BUTTON */
+
+.whatsapp{
+
+position:fixed;
+bottom:25px;
+right:25px;
+background:#25D366;
+color:white;
+font-size:26px;
+width:60px;
+height:60px;
+display:flex;
+align-items:center;
+justify-content:center;
+border-radius:50%;
+text-decoration:none;
+
 }
 
 /* FOOTER */
 
 footer{
-padding:30px;
+padding:40px;
 text-align:center;
-font-size:0.8rem;
 opacity:0.6;
 }
 
@@ -178,95 +230,107 @@ opacity:0.6;
 <div class="logo">BaoZen</div>
 
 <div>
+
 <a href="#servicios">Servicios</a>
-<a href="#beneficios">Beneficios</a>
+<a href="#proceso">Proceso</a>
 <a href="#contacto">Contacto</a>
+
 </div>
 
 </nav>
 
 <section class="hero">
 
-<h1>Automatiza tu negocio con Inteligencia Artificial</h1>
+<h1 data-aos="fade-up">Automatiza tu empresa con Inteligencia Artificial</h1>
 
-<p>
-Reducimos costos operativos y aumentamos la productividad mediante
-automatización inteligente, chatbots avanzados y sistemas basados en IA.
+<p data-aos="fade-up" data-aos-delay="200">
+
+Ayudamos a empresas a reducir costos operativos y aumentar su productividad mediante automatización inteligente.
+
 </p>
 
-<a class="cta" href="mailto:hola@baozen.com">Agendar Consulta</a>
+<a class="cta" href="#contacto" data-aos="fade-up" data-aos-delay="400">
+
+Agendar Consulta
+
+</a>
 
 </section>
 
 <section class="section" id="servicios">
 
-<h2>Servicios</h2>
+<h2 data-aos="fade-up">Servicios</h2>
 
 <div class="services">
 
-<div class="card">
-<h3>Chatbots con IA</h3>
-<p>Atiende clientes 24/7 con asistentes inteligentes entrenados para tu negocio.</p>
+<div class="card" data-aos="fade-up">
+<h3>Chatbots IA</h3>
+<p>Automatiza la atención al cliente 24/7.</p>
 </div>
 
-<div class="card">
+<div class="card" data-aos="fade-up" data-aos-delay="150">
 <h3>Automatización</h3>
-<p>Automatizamos tareas repetitivas para ahorrar tiempo y dinero.</p>
+<p>Reduce tareas manuales con flujos inteligentes.</p>
 </div>
 
-<div class="card">
+<div class="card" data-aos="fade-up" data-aos-delay="300">
 <h3>Integraciones</h3>
-<p>Conectamos CRM, WhatsApp, bases de datos y herramientas de negocio.</p>
+<p>Conecta CRM, WhatsApp y herramientas empresariales.</p>
 </div>
 
-<div class="card">
-<h3>Análisis de datos</h3>
-<p>Convierte tus datos en decisiones inteligentes con modelos predictivos.</p>
-</div>
-
-</div>
-
-</section>
-
-<section class="section" id="beneficios">
-
-<h2>¿Por qué trabajar con BaoZen?</h2>
-
-<div class="benefits">
-
-<div class="benefit">
-<h4>⚡ Implementación rápida</h4>
-<p>Soluciones listas en semanas, no meses.</p>
-</div>
-
-<div class="benefit">
-<h4>💰 Reducción de costos</h4>
-<p>Automatiza procesos que antes requerían personal.</p>
-</div>
-
-<div class="benefit">
-<h4>📈 Escalabilidad</h4>
-<p>Infraestructura preparada para crecer contigo.</p>
-</div>
-
-<div class="benefit">
-<h4>🤖 IA personalizada</h4>
-<p>Entrenamos modelos adaptados a tu negocio.</p>
+<div class="card" data-aos="fade-up" data-aos-delay="450">
+<h3>Análisis IA</h3>
+<p>Convierte datos en decisiones estratégicas.</p>
 </div>
 
 </div>
 
 </section>
 
-<section class="cta-section" id="contacto">
+<section class="section" id="proceso">
 
-<h2>Empieza a automatizar tu negocio hoy</h2>
+<h2 data-aos="fade-up">Nuestro proceso</h2>
 
-<p>Agenda una llamada y descubre cómo la IA puede transformar tu empresa.</p>
+<div class="process">
 
-<br>
+<div class="step" data-aos="fade-up">
+<h3>1. Diagnóstico</h3>
+<p>Analizamos tu negocio y detectamos oportunidades de automatización.</p>
+</div>
 
-<a class="cta" href="mailto:hola@baozen.com">Hablar con nosotros</a>
+<div class="step" data-aos="fade-up" data-aos-delay="150">
+<h3>2. Implementación</h3>
+<p>Construimos la solución adaptada a tu empresa.</p>
+</div>
+
+<div class="step" data-aos="fade-up" data-aos-delay="300">
+<h3>3. Optimización</h3>
+<p>Mejoramos continuamente los sistemas para maximizar resultados.</p>
+</div>
+
+</div>
+
+</section>
+
+<section class="section" id="contacto">
+
+<h2 data-aos="fade-up">Contáctanos</h2>
+
+<div class="contact">
+
+<form action="https://formspree.io/f/https://formspree.io/f/mdawelpb" method="POST">
+
+<input type="text" name="name" placeholder="Nombre" required>
+
+<input type="email" name="email" placeholder="Correo electrónico" required>
+
+<textarea name="message" placeholder="Cuéntanos sobre tu proyecto"></textarea>
+
+<button type="submit">Enviar mensaje</button>
+
+</form>
+
+</div>
 
 </section>
 
@@ -275,6 +339,24 @@ automatización inteligente, chatbots avanzados y sistemas basados en IA.
 © 2026 BaoZen AI Agency
 
 </footer>
+
+<!-- BOTÓN WHATSAPP -->
+
+<a class="whatsapp" href="https://wa.me/573152870822" target="_blank">
+
+💬
+
+</a>
+
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+<script>
+
+AOS.init({
+duration:1000
+});
+
+</script>
 
 </body>
 </html>
